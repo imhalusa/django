@@ -66,9 +66,9 @@ class TestView(TestCase):
         soup = BeautifulSoup(response.content, 'html.parser')
         
         # 2.2. 포스트 목록 페이지와 똑같은 내비게이션 바가 있다.
-        navber = soup.nav
-        self.assertIn('Blog', navber.text)
-        self.assertIn('About Me', navber.text)
+        navbar = soup.nav
+        self.assertIn('Blog', navbar.text)
+        self.assertIn('About Me', navbar.text)
         
         # 2.3. 첫 번째 포스트의 제목이 웹 브라우저 탭 타이틀에 들어 있다.
         self.assertIn(post_001.title, soup.title.text)
